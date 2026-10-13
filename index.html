@@ -2,12 +2,13 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voorstel samenwerking 2026–2027 | Muldersign & Striker7 × VV Meeden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B0F17" />
+  <title>Voorstel VV Meeden | Muldersign & STRIKER7</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <script>
     tailwind.config = {
@@ -22,13 +23,17 @@
               light: "#F8FAFC",
             },
           },
+          boxShadow: {
+            soft: "0 18px 50px rgba(15, 23, 42, 0.08)",
+          },
         },
       },
     };
   </script>
 
   <style>
-    body { background-color: #F8FAFC; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #F8FAFC; overflow-x: hidden; }
     .pattern-bg {
       background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300aeef' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
@@ -36,6 +41,17 @@
       background: linear-gradient(135deg, #00AEEF 0%, #0077B5 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .safe-x { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+    .safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+    .proposal-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .proposal-card:hover { transform: translateY(-4px); }
+    @media (max-width: 640px) {
+      .mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .mobile-scroll table { min-width: 760px; }
+      .hero-title { font-size: clamp(2.15rem, 11vw, 3.3rem); line-height: 1.03; }
     }
   </style>
 </head>
@@ -43,509 +59,402 @@
 <body class="text-gray-800 antialiased font-sans">
 
   <!-- Header -->
-  <header class="bg-brand-darker py-6 sticky top-0 z-50 shadow-lg border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-      <div class="flex items-center gap-4">
-        <img src="https://muldersign.nl/wp-content/uploads/2022/06/Head-2.png" alt="Muldersign Logo" class="h-10">
+  <header class="bg-brand-darker/95 backdrop-blur sticky top-0 z-50 shadow-lg border-b border-gray-800">
+    <div class="max-w-6xl mx-auto safe-x py-4 sm:py-5 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <img src="https://muldersign.nl/wp-content/uploads/2022/06/Head-2.png" alt="Muldersign Logo" class="h-9 sm:h-10 w-auto shrink-0" />
         <div class="hidden sm:block h-7 w-px bg-gray-700"></div>
-        <span class="hidden sm:inline text-gray-300 text-sm font-semibold tracking-wide">
-          Muldersign &amp; Striker7 × VV Meeden
+        <span class="hidden sm:inline text-gray-300 text-sm font-semibold tracking-wide truncate">
+          Muldersign &amp; STRIKER7 × VV Meeden
         </span>
       </div>
 
-      <a href="#contact" class="bg-brand-cyan hover:bg-blue-400 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(0,174,239,0.4)]">
-        Plan kort overleg
+      <a href="#voorstellen" class="bg-brand-cyan hover:bg-sky-400 text-white font-semibold text-sm sm:text-base py-2.5 px-4 sm:px-6 rounded-full transition shadow-[0_0_15px_rgba(0,174,239,0.32)] whitespace-nowrap">
+        Bekijk voorstellen
       </a>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-brand-dark text-white pt-20 pb-24 relative overflow-hidden pattern-bg">
-    <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
-      <span class="text-brand-cyan font-bold tracking-wider uppercase text-sm mb-4 block">
-        Voorstel samenwerking 2026–2027
+  <section class="bg-brand-dark text-white pt-16 sm:pt-20 pb-24 sm:pb-28 relative overflow-hidden pattern-bg">
+    <div class="max-w-6xl mx-auto safe-x relative z-10 text-center">
+      <span class="inline-flex items-center gap-2 text-brand-cyan font-bold tracking-wider uppercase text-xs sm:text-sm mb-5">
+        <i class="fa-solid fa-handshake"></i>
+        Voorstel samenwerking VV Meeden
       </span>
 
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-        Pilotjaar met doorgroeimodel voor <br/>
-        <span class="text-brand-cyan">VV Meeden</span>
+      <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+        Drie routes voor een <span class="text-brand-cyan">sterkere clubpresentatie</span>
       </h1>
 
-      <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-        Een samenwerking waarin professionalisering, zichtbaarheid en sportieve ondersteuning samenkomen.
-        Seizoen 2026–2027 wordt ingericht als pilotjaar, met intentie tot verlenging bij een positieve evaluatie.
+      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+        Van een nieuwe website tot een meerjarig partnership met STRIKER7 en Muldersign. VV Meeden kan kiezen welke stap nu het beste past, met ruimte om later verder uit te bouwen.
       </p>
     </div>
 
-    <div class="absolute top-1/4 left-0 w-64 h-64 bg-brand-cyan rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-    <div class="absolute bottom-0 right-10 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <div class="absolute top-1/4 -left-12 w-64 h-64 bg-brand-cyan rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
   </section>
 
-  <!-- Goal -->
-  <section class="max-w-6xl mx-auto px-6 -mt-12 relative z-20">
-    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100">
-      <div class="flex flex-col md:flex-row md:items-start gap-8">
-        <div class="md:w-1/3">
-          <h2 class="text-2xl font-bold text-brand-dark mb-3">Doel</h2>
+  <!-- Intro -->
+  <section class="max-w-6xl mx-auto safe-x -mt-12 relative z-20">
+    <div class="bg-white rounded-2xl shadow-soft p-6 sm:p-8 md:p-10 border border-gray-100">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="lg:col-span-1">
+          <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider mb-2">Uitgangspunt</p>
+          <h2 class="text-2xl font-extrabold text-brand-dark mb-3">Praktisch, professioneel en schaalbaar</h2>
           <p class="text-gray-600 leading-relaxed">
-            De samenwerking is gericht op continuïteit en groei: een professionele uitstraling, meer zichtbaarheid voor sponsoren
-            en praktische ondersteuning voor de club.
+            De nieuwe website vormt de basis. Vanuit daar kan VV Meeden kiezen voor extra media-ondersteuning of voor een structureel partnership waarin STRIKER7 de vaste ballenpartner wordt.
           </p>
-
-          <div class="mt-6 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <p class="font-bold text-brand-dark mb-2">Aanleiding</p>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              VV Meeden heeft al een website, maar de styling kan strakker en er spelen hostingproblemen.
-              Dit voorstel brengt dat terug naar één betrouwbare basis met een moderne uitstraling.
-            </p>
-          </div>
         </div>
 
-        <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div class="bg-brand-light rounded-xl p-6 border border-gray-200">
-            <div class="w-12 h-12 bg-blue-100 text-brand-cyan rounded-lg flex items-center justify-center text-xl mb-4">
-              <i class="fa-solid fa-bullseye"></i>
-            </div>
-            <p class="font-bold text-brand-dark">Professionalisering</p>
-            <p class="text-sm text-gray-600 mt-1">Website, sponsorconcept en presentatie naar buiten toe.</p>
+        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-brand-light rounded-xl p-5 border border-gray-200">
+            <div class="w-11 h-11 bg-blue-100 text-brand-cyan rounded-lg flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-globe"></i></div>
+            <p class="font-bold text-brand-dark">Nieuwe website</p>
+            <p class="text-sm text-gray-600 mt-1">Mobiel geoptimaliseerd, professioneel en beter beheersbaar.</p>
           </div>
 
-          <div class="bg-brand-light rounded-xl p-6 border border-gray-200">
-            <div class="w-12 h-12 bg-blue-100 text-brand-cyan rounded-lg flex items-center justify-center text-xl mb-4">
-              <i class="fa-solid fa-eye"></i>
-            </div>
-            <p class="font-bold text-brand-dark">Zichtbaarheid</p>
-            <p class="text-sm text-gray-600 mt-1">Meer reuring online en extra sponsorwaarde.</p>
+          <div class="bg-brand-light rounded-xl p-5 border border-gray-200">
+            <div class="w-11 h-11 bg-blue-100 text-brand-cyan rounded-lg flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-camera"></i></div>
+            <p class="font-bold text-brand-dark">Meer uitstraling</p>
+            <p class="text-sm text-gray-600 mt-1">Selectiefotografie en matchday-content als extra optie.</p>
           </div>
 
-          <div class="bg-brand-light rounded-xl p-6 border border-gray-200">
-            <div class="w-12 h-12 bg-blue-100 text-brand-cyan rounded-lg flex items-center justify-center text-xl mb-4">
-              <i class="fa-solid fa-futbol"></i>
-            </div>
-            <p class="font-bold text-brand-dark">Sportieve steun</p>
-            <p class="text-sm text-gray-600 mt-1">Striker7 als ballenpartner voor senioren en jeugd.</p>
+          <div class="bg-brand-light rounded-xl p-5 border border-gray-200">
+            <div class="w-11 h-11 bg-blue-100 text-brand-cyan rounded-lg flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-futbol"></i></div>
+            <p class="font-bold text-brand-dark">Partnership</p>
+            <p class="text-sm text-gray-600 mt-1">Meerjarige samenwerking met STRIKER7 als vaste ballenpartner.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pilot -->
-  <section class="py-20 bg-brand-light pattern-bg">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
+  <!-- Proposal cards -->
+  <section id="voorstellen" class="py-16 sm:py-20 bg-brand-light pattern-bg">
+    <div class="max-w-6xl mx-auto safe-x">
+      <div class="text-center mb-10 sm:mb-12">
         <span class="inline-flex items-center gap-2 bg-white border border-gray-200 text-brand-dark text-xs font-bold px-4 py-2 rounded-full">
-          <i class="fa-solid fa-flask text-brand-cyan"></i> 2026–2027 | Pilotvoorstel
+          <i class="fa-solid fa-layer-group text-brand-cyan"></i> 3 voorstellen
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mt-5 mb-4">
-          Seizoen 2026–2027 als proefjaar
-        </h2>
-        <p class="text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          In dit seizoen ervaren beide partijen hoe de samenwerking bevalt. Het is laagdrempelig ingericht,
-          met een heldere evaluatie en een logisch doorgroeimodel richting meerdere jaren.
-        </p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-5 mb-4">Kies wat het beste past</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">De voorstellen zijn zo opgebouwd dat VV Meeden klein kan starten, maar ook direct kan kiezen voor een structurele samenwerking.</p>
       </div>
 
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-7">
+        <!-- Proposal 1 -->
+        <article class="proposal-card bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col">
+          <div class="bg-brand-dark text-white p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 1</p>
+                <h3 class="text-2xl font-extrabold mt-1">Nieuwe website</h3>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-globe"></i></div>
+            </div>
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-gray-600 leading-relaxed mb-6">Een nieuwe, moderne clubwebsite als betrouwbare basis voor leden, ouders, sponsoren en nieuwe bezoekers.</p>
+
+            <ul class="space-y-3 text-sm text-gray-700 mb-7">
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Homepagina en clubnieuws</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Teampagina's met teamfoto, programma, uitslagen en standen</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Bestuur, commissies, accommodatie en trainingstijden</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Historie, ledeninformatie en lid worden</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Sponsoroverzicht en contact</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-mobile-screen-button text-brand-cyan mt-1"></i><span><strong>Volledig mobiel geoptimaliseerd</strong></span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-envelope text-brand-cyan mt-1"></i><span>Domeinverhuizing en e-mailinrichting inbegrepen</span></li>
+            </ul>
+
+            <div class="mt-auto bg-brand-light border border-gray-200 rounded-xl p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-gray-500">Actieprijs VV Meeden</p>
+              <p class="text-3xl font-extrabold text-brand-dark mt-1">€1.000,-</p>
+              <p class="text-sm text-gray-600 mt-1">eenmalig <span class="line-through text-gray-400">waarde €1.500,-</span></p>
+              <div class="h-px bg-gray-200 my-4"></div>
+              <p class="font-bold text-brand-dark">€150,- per seizoen</p>
+              <p class="text-sm text-gray-600">hosting, domein en e-mail</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proposal 2 -->
+        <article class="proposal-card bg-white rounded-2xl border-2 border-brand-cyan shadow-soft overflow-hidden flex flex-col relative">
+          <div class="absolute top-4 right-4 bg-brand-cyan text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Uitgebreid</div>
+          <div class="bg-brand-dark text-white p-6 pr-28">
+            <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 2</p>
+            <h3 class="text-2xl font-extrabold mt-1">Website + media</h3>
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-gray-600 leading-relaxed mb-6">Alles uit voorstel 1, aangevuld met een professionele en herkenbare presentatie van het eerste elftal.</p>
+
+            <ul class="space-y-3 text-sm text-gray-700 mb-7">
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Nieuwe website inclusief alle onderdelen uit voorstel 1</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-camera text-brand-cyan mt-1"></i><span>Jaarlijks 1 portretfotoshoot van de selectie</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-images text-brand-cyan mt-1"></i><span>Circa 24 matchday-posts per seizoen</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-pen-ruler text-brand-cyan mt-1"></i><span>Vaste visuele stijl passend bij VV Meeden</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-mobile-screen-button text-brand-cyan mt-1"></i><span>Website volledig mobiel geoptimaliseerd</span></li>
+            </ul>
+
+            <div class="mt-auto bg-brand-light border border-gray-200 rounded-xl p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-gray-500">Website</p>
+              <p class="text-2xl font-extrabold text-brand-dark mt-1">€1.000,- eenmalig</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 mt-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-500">Media-abonnement</p>
+                  <p class="font-extrabold text-brand-dark">€750,- per seizoen</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                  <p class="text-sm text-gray-500">Hosting</p>
+                  <p class="font-extrabold text-brand-dark">€150,- per seizoen</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 mt-4">Eerste seizoen totaal: <strong class="text-brand-dark">€1.900,-</strong></p>
+              <p class="text-sm text-gray-600">Daarna: <strong class="text-brand-dark">€900,- per seizoen</strong></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proposal 3 -->
+        <article class="proposal-card bg-brand-darker text-white rounded-2xl border border-gray-700 shadow-soft overflow-hidden flex flex-col">
+          <div class="p-6 border-b border-gray-700">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 3</p>
+                <h3 class="text-2xl font-extrabold mt-1">Meerjarig partnership</h3>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-handshake"></i></div>
+            </div>
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-gray-300 leading-relaxed mb-6">Een driejarige samenwerking waarin Muldersign de website sponsort en STRIKER7 de vaste ballenpartner wordt.</p>
+
+            <ul class="space-y-3 text-sm text-gray-300 mb-7">
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Nieuwe website t.w.v. <strong class="text-white">€1.500,-</strong> als sponsorbijdrage</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Geen eenmalige ontwikkelkosten voor de website</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-futbol text-brand-cyan mt-1"></i><span>STRIKER7 vaste leverancier van nieuwe wedstrijd- en trainingsballen</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-sign-hanging text-brand-cyan mt-1"></i><span>Muldersign / STRIKER7 zichtbaarheid op Sportpark De Bouwte</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-shirt text-brand-cyan mt-1"></i><span>Mogelijkheid om op termijn ook kleding te verkennen</span></li>
+            </ul>
+
+            <div class="mt-auto bg-brand-dark border border-gray-700 rounded-xl p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-gray-400">Looptijd</p>
+              <p class="font-extrabold text-white mt-1">2027–2028 · 2028–2029 · 2029–2030</p>
+              <div class="h-px bg-gray-700 my-4"></div>
+              <p class="font-bold text-white">€150,- per seizoen</p>
+              <p class="text-sm text-gray-400">alleen hosting, domein en e-mail</p>
+              <p class="text-xs text-gray-500 mt-3">Wedstrijdposts en structureel socialmediabeheer vallen niet standaard binnen dit partnership.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website detail -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto safe-x">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <div>
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Websitebasis</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-2 mb-5">Wat er in de nieuwe website komt</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            De huidige website wordt vervangen door één moderne, overzichtelijke omgeving die technisch stabiel is en prettig werkt op mobiel, tablet en desktop.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5"><p class="font-bold text-brand-dark">Clubinformatie</p><p class="text-sm text-gray-600 mt-1">Bestuur, commissies, historie, accommodatie en contactpersonen.</p></div>
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5"><p class="font-bold text-brand-dark">Teams</p><p class="text-sm text-gray-600 mt-1">Teamfoto, programma, uitslagen, standen en trainingstijden.</p></div>
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5"><p class="font-bold text-brand-dark">Leden</p><p class="text-sm text-gray-600 mt-1">Praktische ledeninformatie en eenvoudig lid worden.</p></div>
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5"><p class="font-bold text-brand-dark">Sponsoren</p><p class="text-sm text-gray-600 mt-1">Professioneel sponsoroverzicht met ruimte voor groei.</p></div>
+          </div>
+        </div>
+
+        <div class="bg-brand-darker text-white rounded-2xl p-6 sm:p-8 shadow-soft">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-11 h-11 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div>
+              <p class="text-xs uppercase tracking-wider font-bold text-brand-cyan">Mobiel eerst</p>
+              <h3 class="text-xl font-extrabold">Volledig responsive opgebouwd</h3>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-gray-300">
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Heldere navigatie op kleine schermen</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Goed leesbare teksten en knoppen zonder inzoomen</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Teams, standen en nieuws prettig te bekijken op mobiel</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Snelle, compacte opbouw voor ouders, leden en supporters onderweg</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Touchvriendelijke knoppen en formulieren</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership detail -->
+  <section class="py-16 sm:py-20 bg-brand-light pattern-bg">
+    <div class="max-w-6xl mx-auto safe-x">
+      <div class="text-center mb-10">
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 3 uitgelicht</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-2 mb-4">STRIKER7 als vaste ballenpartner</h2>
+        <p class="text-gray-600 max-w-4xl mx-auto leading-relaxed">VV Meeden neemt gedurende drie seizoenen de benodigde nieuwe wedstrijd- en trainingsballen af bij STRIKER7. De aantallen worden ieder seizoen opnieuw afgestemd op de daadwerkelijke behoefte.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden">
+        <div class="p-6 sm:p-8 border-b border-gray-200">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5 text-center"><p class="text-3xl font-extrabold text-brand-dark">102</p><p class="text-sm text-gray-600 mt-1">ballen per seizoen</p></div>
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5 text-center"><p class="text-3xl font-extrabold text-brand-dark">€3.126</p><p class="text-sm text-gray-600 mt-1">indicatieve afname p/j</p></div>
+            <div class="bg-brand-light border border-gray-200 rounded-xl p-5 text-center"><p class="text-3xl font-extrabold text-brand-dark">€9.378</p><p class="text-sm text-gray-600 mt-1">indicatief over 3 jaar</p></div>
+          </div>
+        </div>
+
+        <div class="mobile-scroll">
+          <table class="w-full text-sm">
+            <thead class="bg-brand-dark text-white">
+              <tr>
+                <th class="text-left px-5 py-4 font-semibold">Type</th>
+                <th class="text-right px-5 py-4 font-semibold">Aantal p/j</th>
+                <th class="text-right px-5 py-4 font-semibold">Prijs p/st</th>
+                <th class="text-right px-5 py-4 font-semibold">Totaal</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr><td class="px-5 py-4">Trainingsbal maat 4 – 290 gram</td><td class="px-5 py-4 text-right">10</td><td class="px-5 py-4 text-right">€28,50</td><td class="px-5 py-4 text-right font-semibold">€285,00</td></tr>
+              <tr><td class="px-5 py-4">Trainingsbal maat 5 – 320 gram</td><td class="px-5 py-4 text-right">30</td><td class="px-5 py-4 text-right">€28,50</td><td class="px-5 py-4 text-right font-semibold">€855,00</td></tr>
+              <tr><td class="px-5 py-4">Trainingsbal maat 5 – 440 gram</td><td class="px-5 py-4 text-right">50</td><td class="px-5 py-4 text-right">€28,50</td><td class="px-5 py-4 text-right font-semibold">€1.425,00</td></tr>
+              <tr><td class="px-5 py-4">Wedstrijdbal maat 5 – 440 gram</td><td class="px-5 py-4 text-right">12</td><td class="px-5 py-4 text-right">€46,75</td><td class="px-5 py-4 text-right font-semibold">€561,00</td></tr>
+            </tbody>
+            <tfoot class="bg-gray-50">
+              <tr><td class="px-5 py-4 font-extrabold text-brand-dark">Totaal per seizoen</td><td class="px-5 py-4 text-right font-extrabold">102</td><td class="px-5 py-4"></td><td class="px-5 py-4 text-right font-extrabold text-brand-dark">€3.126,00</td></tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="p-6 sm:p-8 bg-gray-50 border-t border-gray-200">
+          <p class="text-sm text-gray-600 leading-relaxed"><strong class="text-brand-dark">Belangrijk:</strong> de aantallen zijn een huidige indicatie, geen harde jaarlijkse afnameverplichting van exact 102 ballen. Teams, voorraad en behoefte kunnen wijzigen. De kern van de afspraak is dat de nieuwe wedstrijd- en trainingsballen tijdens de looptijd via STRIKER7 worden besteld.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funding -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto safe-x">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Item 1 -->
-        <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-          <div class="bg-brand-dark text-white px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-cyan/20 flex items-center justify-center text-brand-cyan">
-                <i class="fa-solid fa-sign-hanging"></i>
-              </div>
-              <h3 class="font-bold text-lg">1) Bordsponsoring</h3>
-            </div>
-            <span class="text-xs font-bold bg-brand-cyan px-3 py-1 rounded-full">Pilot</span>
-          </div>
-
-          <div class="p-6">
-            <ul class="space-y-3 text-gray-700">
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>1 reclamebord langs het hoofdveld</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Productiekosten voor rekening van Muldersign</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Professioneel ontwerp passend bij het sportpark</span>
-              </li>
-            </ul>
-
-            <div class="mt-6 bg-brand-light border border-gray-200 rounded-xl p-5">
-              <p class="font-bold text-brand-dark mb-2">Meerwaarde voor de club</p>
-              <ul class="space-y-2 text-sm text-gray-700">
-                <li>Directe sponsorwaarde</li>
-                <li>Versterking commerciële uitstraling</li>
-                <li>Duidelijke partnerpositionering</li>
-              </ul>
-            </div>
+        <div class="bg-brand-dark text-white rounded-2xl p-6 sm:p-8">
+          <div class="w-12 h-12 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-bullhorn"></i></div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mb-4">Ballenactie</h2>
+          <p class="text-gray-300 leading-relaxed">VV Meeden kan ieder seizoen opnieuw een ballenactie organiseren. Op basis van de eerdere opbrengst van circa €1.600 kan conservatief worden gerekend met ongeveer €1.400–€1.500 per seizoen.</p>
+          <div class="mt-6 bg-brand-darker rounded-xl border border-gray-700 p-5">
+            <p class="text-sm text-gray-400">Potentieel over 3 seizoenen</p>
+            <p class="text-3xl font-extrabold text-white mt-1">€4.200 – €4.500</p>
           </div>
         </div>
 
-        <!-- Item 2 -->
-        <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-          <div class="bg-brand-dark text-white px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-cyan/20 flex items-center justify-center text-brand-cyan">
-                <i class="fa-solid fa-globe"></i>
-              </div>
-              <h3 class="font-bold text-lg">2) Nieuwe website VV Meeden</h3>
-            </div>
-            <span class="text-xs font-bold bg-brand-cyan px-3 py-1 rounded-full">Pilot</span>
-          </div>
-
-          <div class="p-6">
-            <ul class="space-y-3 text-gray-700">
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Vernieuwde, strakkere uitstraling t.o.v. huidige website</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Live weergave programma, uitslagen en standen</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Sponsoroverzicht professioneel gepresenteerd</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Volledig mobiel geoptimaliseerd</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-                <span>Hosting en technisch onderhoud inbegrepen (oplossing voor huidige hostingproblemen)</span>
-              </li>
-            </ul>
-
-            <div class="mt-6 bg-brand-light border border-gray-200 rounded-xl p-5">
-              <p class="font-bold text-brand-dark mb-2">Waarom dit belangrijk is</p>
-              <p class="text-sm text-gray-700 leading-relaxed">
-                Jongeren en ouders zitten primair op mobiel. Een sterke online presentatie zorgt voor meer betrokkenheid,
-                grotere zichtbaarheid voor sponsoren en een professionelere uitstraling in de regio.
-              </p>
-              <ul class="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Meer betrokkenheid</li>
-                <li>Grotere zichtbaarheid voor sponsoren</li>
-                <li>Professionelere uitstraling in de regio</li>
-                <li>Mogelijke aantrekkingskracht op nieuwe spelers</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Options side-by-side -->
-        <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden lg:col-span-2">
-          <div class="bg-brand-dark text-white px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-cyan/20 flex items-center justify-center text-brand-cyan">
-                <i class="fa-solid fa-layer-group"></i>
-              </div>
-              <h3 class="font-bold text-lg">3) Ballenpartner (2 opties)</h3>
-            </div>
-            <span class="text-xs font-bold bg-brand-cyan px-3 py-1 rounded-full">Keuze</span>
-          </div>
-
-          <div class="p-6">
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Striker7 kan VV Meeden ondersteunen met wedstrijd- en trainingsballen voor alle seniorenteams en jeugdteams.
-              Hieronder staan twee varianten, afhankelijk van hoe snel de club wil overstappen.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Option 1 -->
-              <div class="bg-brand-light border border-gray-200 rounded-2xl p-6">
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                    <p class="text-xs font-bold text-brand-dark uppercase tracking-wider">Optie 1</p>
-                    <h4 class="text-xl font-extrabold text-brand-dark mt-1">Volledig nieuw ballenpakket</h4>
-                    <p class="text-sm text-gray-700 mt-2 leading-relaxed">
-                      Een complete, uniforme ballenlijn voor de club: senioren en jeugd krijgen direct een vernieuwd pakket
-                      wedstrijd- en trainingsballen. Dit geeft een frisse start en één herkenbare standaard.
-                    </p>
-                  </div>
-                  <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-brand-cyan text-xl">
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-
-                <div class="mt-6 bg-white border border-gray-200 rounded-xl p-5">
-                  <p class="font-bold text-brand-dark mb-2">Inbegrepen</p>
-                  <ul class="space-y-2 text-sm text-gray-700">
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Wedstrijd- en trainingsballen voor alle teams</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Juiste maten/gewichten per categorie (jeugd/senioren)</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Mogelijkheid tot VV Meeden-logo op de ballen</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Wedstrijdaankondigingen 1e elftal inbegrepen (matchday visuals)</span></li>
-                  </ul>
-                </div>
-
-                <div class="mt-5 bg-brand-dark text-white rounded-xl p-5 border border-gray-700">
-                  <p class="font-bold">Effect</p>
-                  <p class="text-sm text-gray-300 mt-2 leading-relaxed">
-                    Direct een uniforme uitstraling op het veld én extra online reuring rondom het 1e elftal.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Option 2 -->
-              <div class="bg-brand-light border border-gray-200 rounded-2xl p-6">
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                    <p class="text-xs font-bold text-brand-dark uppercase tracking-wider">Optie 2</p>
-                    <h4 class="text-xl font-extrabold text-brand-dark mt-1">Gefaseerd: ballen op aanvraag</h4>
-                    <p class="text-sm text-gray-700 mt-2 leading-relaxed">
-                      De club houdt huidige ballen die nog goed zijn in gebruik en vult gefaseerd aan.
-                      Er worden nieuwe ballen geleverd op aanvraag per team of per moment in het seizoen.
-                    </p>
-                  </div>
-                  <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-brand-cyan text-xl">
-                    <i class="fa-solid fa-sliders"></i>
-                  </div>
-                </div>
-
-                <div class="mt-6 bg-white border border-gray-200 rounded-xl p-5">
-                  <p class="font-bold text-brand-dark mb-2">Inbegrepen</p>
-                  <ul class="space-y-2 text-sm text-gray-700">
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Ballen blijven in gebruik zolang ze nog goed zijn</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Nieuwe wedstrijd- en trainingsballen op aanvraag</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i><span>Juiste maten/gewichten per categorie (jeugd/senioren)</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-gray-400 mt-1"></i><span><strong>Geen</strong> wedstrijdaankondigingen 1e elftal in pilotjaar</span></li>
-                  </ul>
-                </div>
-
-                <div class="mt-5 bg-white border border-gray-200 rounded-xl p-5">
-                  <p class="font-bold text-brand-dark">Effect</p>
-                  <p class="text-sm text-gray-700 mt-2 leading-relaxed">
-                    Rustige overstap zonder onnodige vervanging. Praktisch en laagdrempelig, met ruimte om later op te schalen.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-8 bg-white border border-gray-200 rounded-2xl p-6">
-              <div class="flex items-start gap-3">
-                <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-xl">
-                  <i class="fa-solid fa-bullhorn"></i>
-                </div>
-                <div>
-                  <h4 class="text-xl font-extrabold text-brand-dark">Extra optie: Ballenactie vóór het seizoen</h4>
-                  <p class="text-gray-700 mt-2 leading-relaxed">
-                    Voorafgaand aan het nieuwe voetbalseizoen kan VV Meeden een ballenactie inzetten. Dit is een sponsoractie waarbij
-                    de club nieuwe wedstrijdballen of trainingsballen financiert via bijdragen van leden, supporters of lokale ondernemers.
-                  </p>
-
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    <div class="bg-brand-light border border-gray-200 rounded-xl p-5">
-                      <p class="font-bold text-brand-dark mb-2">Hoe werkt het?</p>
-                      <ul class="space-y-2 text-sm text-gray-700">
-                        <li>De club bepaalt hoeveel ballen nodig zijn</li>
-                        <li>Sponsors adopteren één of meerdere ballen</li>
-                        <li>De opbrengst wordt gebruikt om daadwerkelijk nieuwe ballen aan te schaffen</li>
-                      </ul>
-                    </div>
-
-                    <div class="bg-brand-light border border-gray-200 rounded-xl p-5">
-                      <p class="font-bold text-brand-dark mb-2">Waarom doen clubs dit?</p>
-                      <ul class="space-y-2 text-sm text-gray-700">
-                        <li>Laagdrempelige sponsoring (iedereen kan meedoen)</li>
-                        <li>Direct zichtbaar resultaat op het veld</li>
-                        <li>Geen groot sponsorcontract nodig</li>
-                        <li>Helpt ballenvoorraad structureel op peil te houden</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="mt-6 bg-brand-dark text-white rounded-xl p-5 border border-gray-700">
-                    <p class="font-bold">Mogelijke tegenprestatie (clubkeuze)</p>
-                    <p class="text-sm text-gray-300 mt-2 leading-relaxed">
-                      Denk aan naamvermelding op de website, een bedankbericht op social media, een vermelding in de kantine
-                      of een sponsoroverzicht per team. De invulling stemmen we af op wat bij VV Meeden past.
-                    </p>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
+        <div class="bg-brand-light border border-gray-200 rounded-2xl p-6 sm:p-8">
+          <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 text-brand-cyan flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-euro-sign"></i></div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mb-4">Balsponsoren thuiswedstrijden</h2>
+          <p class="text-gray-600 leading-relaxed">Bij circa 12 thuiswedstrijden per seizoen zijn er over drie jaar ongeveer 36 sponsorbare wedstrijden. Bij gemiddeld €100 per wedstrijd ontstaat een potentiële opbrengst van €3.600.</p>
+          <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+            <div class="bg-white border border-gray-200 rounded-xl p-4"><p class="font-extrabold text-brand-dark">€75</p><p class="text-xs text-gray-500 mt-1">€2.700</p></div>
+            <div class="bg-white border-2 border-brand-cyan rounded-xl p-4"><p class="font-extrabold text-brand-dark">€100</p><p class="text-xs text-gray-500 mt-1">€3.600</p></div>
+            <div class="bg-white border border-gray-200 rounded-xl p-4"><p class="font-extrabold text-brand-dark">€150</p><p class="text-xs text-gray-500 mt-1">€5.400</p></div>
           </div>
         </div>
       </div>
 
+      <div class="mt-8 bg-brand-cyan rounded-2xl p-6 sm:p-8 text-white text-center shadow-soft">
+        <p class="text-sm uppercase tracking-wider font-bold text-blue-50">Potentiële sponsoropbrengst</p>
+        <p class="text-4xl sm:text-5xl font-extrabold mt-2">circa €7.800 – €8.100</p>
+        <p class="text-blue-50 max-w-3xl mx-auto mt-3">op basis van een jaarlijkse ballenactie en gemiddeld €100 balsponsoring per thuiswedstrijd. Geen garantie, maar wel een realistische manier om een groot deel van de ballenkosten terug te verdienen.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Evaluation -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-        <div class="bg-brand-dark text-white px-6 py-5 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-brand-cyan/20 flex items-center justify-center text-brand-cyan">
-              <i class="fa-solid fa-clipboard-check"></i>
-            </div>
-            <h2 class="font-bold text-lg">Evaluatiemoment – voorjaar 2027</h2>
-          </div>
-          <span class="text-xs font-bold bg-brand-cyan px-3 py-1 rounded-full">Check-in</span>
+  <!-- Clothing -->
+  <section class="py-16 sm:py-20 bg-brand-darker text-white">
+    <div class="max-w-6xl mx-auto safe-x">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+        <div>
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Mogelijke vervolgstap</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-2 mb-5">Op termijn ook kijken naar kleding</h2>
+          <p class="text-gray-300 leading-relaxed mb-5">VV Meeden zit op dit moment goed bij Robey. Dit voorstel is nadrukkelijk niet bedoeld om daar direct verandering in te brengen.</p>
+          <p class="text-gray-300 leading-relaxed">Wel kan het tijdens de samenwerking interessant zijn om vrijblijvend te bekijken wat STRIKER7 op termijn kan betekenen op het gebied van club- en teamwear. Zonder verplichting, puur om kwaliteit, mogelijkheden en prijs naast de huidige situatie te kunnen leggen.</p>
         </div>
 
-        <div class="p-6 md:p-8">
-          <p class="text-gray-600 mb-6">
-            Aan het einde van het seizoen evalueren we samen de samenwerking en de resultaten.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-brand-light border border-gray-200 rounded-xl p-6">
-              <p class="font-bold text-brand-dark mb-2">Wat bespreken we?</p>
-              <ul class="space-y-2 text-sm text-gray-700">
-                <li>Ervaring met de nieuwe website en het beheer</li>
-                <li>Stabiliteit van hosting en support</li>
-                <li>Ervaring met ballenvoorziening (volledig of gefaseerd)</li>
-                <li>Algemene clubimpact en vervolg</li>
-              </ul>
-            </div>
-
-            <div class="bg-brand-light border border-gray-200 rounded-xl p-6">
-              <p class="font-bold text-brand-dark mb-2">Uitkomst</p>
-              <ul class="space-y-2 text-sm text-gray-700">
-                <li>Doorgaan en verlengen</li>
-                <li>Bijsturen waar nodig</li>
-                <li>Opschalen (bijv. uitbreiden ballen of communicatie)</li>
-                <li>Verankeren in meerjarig plan</li>
-              </ul>
-            </div>
-          </div>
-
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-shirt text-brand-cyan text-xl"></i><p class="font-bold mt-3">Wedstrijdtenues</p></div>
+          <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-person-running text-brand-cyan text-xl"></i><p class="font-bold mt-3">Trainingskleding</p></div>
+          <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-vest text-brand-cyan text-xl"></i><p class="font-bold mt-3">Jassen & stafkleding</p></div>
+          <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-bag-shopping text-brand-cyan text-xl"></i><p class="font-bold mt-3">Tassen & accessoires</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Long term -->
-  <section class="py-20 bg-brand-darker text-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <span class="text-brand-cyan font-bold tracking-wider uppercase text-sm mb-4 block">2027 en verder</span>
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Lange termijn partnership</h2>
-      <p class="text-gray-300 max-w-4xl mx-auto mb-12 text-lg leading-relaxed">
-        Als de samenwerking van beide kanten positief wordt ervaren, bouwen we door naar een meerjarige samenwerking.
-        Doel: continuïteit en groei, niet één seizoen maar meerdere jaren.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-        <div class="bg-brand-dark p-8 rounded-2xl border border-gray-700 hover:border-brand-cyan transition-colors">
-          <div class="w-12 h-12 bg-brand-cyan/20 rounded-lg flex items-center justify-center text-brand-cyan mb-6 text-2xl">
-            <i class="fa-solid fa-handshake"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Meerjarige verlenging</h3>
-          <p class="text-gray-400">
-            Heldere afspraken voor meerdere seizoenen met een logische verdeling van sponsorwaarde en clubimpact.
-          </p>
-        </div>
-
-        <div class="bg-brand-dark p-8 rounded-2xl border border-gray-700 hover:border-brand-cyan transition-colors">
-          <div class="w-12 h-12 bg-brand-cyan/20 rounded-lg flex items-center justify-center text-brand-cyan mb-6 text-2xl">
-            <i class="fa-solid fa-pen-ruler"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Doorontwikkeling & professionalisering</h3>
-          <p class="text-gray-400">
-            Doorontwikkeling website, verdere professionalisering sponsorweergave en structurele positionering van Striker7 als vaste ballenpartner.
-          </p>
-        </div>
+  <!-- Comparison -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto safe-x">
+      <div class="text-center mb-10">
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-wider">In één oogopslag</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-2">De drie voorstellen naast elkaar</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- Why interesting -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-gray-200">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl font-bold text-brand-dark">Waarom dit interessant is voor VV Meeden</h2>
-          <p class="text-gray-600 max-w-4xl mx-auto mt-3">
-            Een pilot die direct waarde levert, met een duidelijke keuze tussen twee routes en een evaluatiemoment richting 2027+.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700"><strong>Hostingproblemen opgelost</strong> en structurele technische ontzorging</p>
-          </div>
-
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700"><strong>Modernere uitstraling</strong> van de clubsite en sponsorweergave</p>
-          </div>
-
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700"><strong>Extra sponsorwaarde</strong> via 1 reclamebord langs het hoofdveld</p>
-          </div>
-
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700"><strong>Ballenpartner voor senioren en jeugd</strong> met praktische keuze (volledig of gefaseerd)</p>
-          </div>
-
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700"><strong>Meer online betrokkenheid</strong> bij jeugd, ouders en supporters</p>
-          </div>
-
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700">Heldere route naar <strong>meerjarige samenwerking</strong> na evaluatie in 2027</p>
-          </div>
-
-          <div class="flex items-start gap-3 bg-brand-light border border-gray-200 rounded-xl p-5 md:col-span-2">
-            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
-            <p class="text-gray-700">
-              Extra mogelijkheid: <strong>ballenactie voorafgaand aan het seizoen</strong> om de ballenvoorraad (deels) te financieren met hulp van supporters en lokale ondernemers
-            </p>
-          </div>
-        </div>
+      <div class="mobile-scroll bg-white border border-gray-200 rounded-2xl shadow-soft overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-brand-dark text-white">
+            <tr>
+              <th class="text-left px-5 py-4">Onderdeel</th>
+              <th class="text-center px-5 py-4">1. Website</th>
+              <th class="text-center px-5 py-4">2. Website + media</th>
+              <th class="text-center px-5 py-4">3. Partnership</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr><td class="px-5 py-4 font-semibold">Nieuwe website</td><td class="text-center px-5 py-4">✓</td><td class="text-center px-5 py-4">✓</td><td class="text-center px-5 py-4">✓</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-4 font-semibold">Websiteprijs</td><td class="text-center px-5 py-4">€1.000</td><td class="text-center px-5 py-4">€1.000</td><td class="text-center px-5 py-4">€0 <span class="text-xs text-gray-500 block">t.w.v. €1.500</span></td></tr>
+            <tr><td class="px-5 py-4 font-semibold">Hosting / domein / e-mail</td><td class="text-center px-5 py-4">€150 p/j</td><td class="text-center px-5 py-4">€150 p/j</td><td class="text-center px-5 py-4">€150 p/j</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-4 font-semibold">Jaarlijkse portretshoot</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">✓</td><td class="text-center px-5 py-4">—</td></tr>
+            <tr><td class="px-5 py-4 font-semibold">±24 matchday-posts p/j</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">✓</td><td class="text-center px-5 py-4">—</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-4 font-semibold">STRIKER7 ballenpartner</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">✓</td></tr>
+            <tr><td class="px-5 py-4 font-semibold">Exclusieve ballenafname</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">3 seizoenen</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-4 font-semibold">Kleding op termijn verkennen</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">✓</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section id="contact" class="py-24 bg-brand-cyan relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full opacity-10">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
-        <path d="M0,100 C20,0 50,0 100,100 Z" fill="white" />
-      </svg>
+  <section id="contact" class="py-20 sm:py-24 bg-brand-cyan relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full"><path d="M0,100 C20,0 50,0 100,100 Z" fill="white" /></svg>
     </div>
 
-    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Zullen we dit afstemmen?</h2>
-      <p class="text-blue-50 text-xl mb-10">
-        Kort overleg is genoeg om de pilot concreet te maken. Daarna kunnen we direct starten met de onderdelen die prioriteit hebben.
-      </p>
+    <div class="max-w-3xl mx-auto safe-x text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-5">Welke route past het beste bij VV Meeden?</h2>
+      <p class="text-blue-50 text-base sm:text-lg md:text-xl mb-8 leading-relaxed">In een kort overleg kunnen we de drie opties naast elkaar leggen en direct bepalen wat praktisch en financieel het beste aansluit.</p>
 
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <a href="https://wa.me/31639232306" target="_blank"
-           class="bg-[#25D366] text-white font-bold py-4 px-10 rounded-full hover:bg-[#1ebe5b] transition-colors shadow-lg w-full sm:w-auto flex items-center justify-center">
-          <i class="fa-brands fa-whatsapp mr-2 text-xl"></i>
-          WhatsApp 💬
+      <div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4">
+        <a href="https://wa.me/31639232306" target="_blank" rel="noopener" class="bg-[#25D366] text-white font-bold py-4 px-8 rounded-full hover:bg-[#1ebe5b] transition shadow-lg flex items-center justify-center">
+          <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> WhatsApp
         </a>
-
-        <a href="tel:+31639232306"
-           class="bg-white text-brand-dark font-bold py-4 px-10 rounded-full hover:bg-gray-100 transition-colors shadow-lg w-full sm:w-auto flex items-center justify-center">
-          <i class="fa-solid fa-phone mr-2 text-brand-cyan"></i>
-          Bel 06 39 23 23 23 06
+        <a href="tel:+31639232306" class="bg-white text-brand-dark font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition shadow-lg flex items-center justify-center">
+          <i class="fa-solid fa-phone mr-2 text-brand-cyan"></i> 06 39 23 23 06
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-brand-darker py-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
-      <img src="https://muldersign.nl/wp-content/uploads/2022/06/Head-2.png" alt="Muldersign Logo" class="h-8 mb-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-      <p>&copy; 2026 Muldersign. Samenwerkingsvoorstel opgesteld voor VV Meeden.</p>
+  <footer class="bg-brand-darker py-8 border-t border-gray-800 text-center text-gray-400 text-sm safe-bottom">
+    <div class="max-w-6xl mx-auto safe-x flex flex-col items-center">
+      <img src="https://muldersign.nl/wp-content/uploads/2022/06/Head-2.png" alt="Muldersign Logo" class="h-8 mb-4 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition" />
+      <p>&copy; 2026 Muldersign. Voorstel opgesteld voor VV Meeden.</p>
     </div>
   </footer>
 
