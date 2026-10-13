@@ -49,10 +49,13 @@
     .proposal-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
     .proposal-card:hover { transform: translateY(-4px); }
     @media (max-width: 640px) {
-      .mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .mobile-scroll table { min-width: 760px; }
-      .hero-title { font-size: clamp(2.15rem, 11vw, 3.3rem); line-height: 1.03; }
+      .hero-title { font-size: clamp(2rem, 10vw, 3rem); line-height: 1.04; }
+      .proposal-card:hover { transform: none; }
+      .mobile-tight { padding-left: 1rem; padding-right: 1rem; }
     }
+    img, svg { max-width: 100%; }
+    * { min-width: 0; }
+    .break-safe { overflow-wrap: anywhere; word-break: normal; }
   </style>
 </head>
 
@@ -69,8 +72,8 @@
         </span>
       </div>
 
-      <a href="#voorstellen" class="bg-brand-cyan hover:bg-sky-400 text-white font-semibold text-sm sm:text-base py-2.5 px-4 sm:px-6 rounded-full transition shadow-[0_0_15px_rgba(0,174,239,0.32)] whitespace-nowrap">
-        Bekijk voorstellen
+      <a href="#voorstellen" class="bg-brand-cyan hover:bg-sky-400 text-white font-semibold text-xs sm:text-base py-2.5 px-3 sm:px-6 rounded-full transition shadow-[0_0_15px_rgba(0,174,239,0.32)] whitespace-nowrap shrink-0">
+        <span class="sm:hidden">Voorstellen</span><span class="hidden sm:inline">Bekijk voorstellen</span>
       </a>
     </div>
   </header>
@@ -312,7 +315,8 @@
           </div>
         </div>
 
-        <div class="mobile-scroll">
+        <!-- Ballenoverzicht desktop -->
+        <div class="hidden md:block">
           <table class="w-full text-sm">
             <thead class="bg-brand-dark text-white">
               <tr>
@@ -332,6 +336,49 @@
               <tr><td class="px-5 py-4 font-extrabold text-brand-dark">Totaal per seizoen</td><td class="px-5 py-4 text-right font-extrabold">102</td><td class="px-5 py-4"></td><td class="px-5 py-4 text-right font-extrabold text-brand-dark">€3.126,00</td></tr>
             </tfoot>
           </table>
+        </div>
+
+        <!-- Ballenoverzicht mobiel: geen horizontale scroll -->
+        <div class="md:hidden p-4 space-y-3 bg-gray-50">
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <p class="font-bold text-brand-dark break-safe">Trainingsbal maat 4 – 290 gram</p>
+            <div class="grid grid-cols-2 gap-3 mt-3 text-sm">
+              <div><p class="text-gray-500">Aantal p/j</p><p class="font-bold">10</p></div>
+              <div><p class="text-gray-500">Prijs p/st</p><p class="font-bold">€28,50</p></div>
+              <div class="col-span-2 pt-2 border-t border-gray-100"><p class="text-gray-500">Totaal</p><p class="text-xl font-extrabold text-brand-dark">€285,00</p></div>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <p class="font-bold text-brand-dark break-safe">Trainingsbal maat 5 – 320 gram</p>
+            <div class="grid grid-cols-2 gap-3 mt-3 text-sm">
+              <div><p class="text-gray-500">Aantal p/j</p><p class="font-bold">30</p></div>
+              <div><p class="text-gray-500">Prijs p/st</p><p class="font-bold">€28,50</p></div>
+              <div class="col-span-2 pt-2 border-t border-gray-100"><p class="text-gray-500">Totaal</p><p class="text-xl font-extrabold text-brand-dark">€855,00</p></div>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <p class="font-bold text-brand-dark break-safe">Trainingsbal maat 5 – 440 gram</p>
+            <div class="grid grid-cols-2 gap-3 mt-3 text-sm">
+              <div><p class="text-gray-500">Aantal p/j</p><p class="font-bold">50</p></div>
+              <div><p class="text-gray-500">Prijs p/st</p><p class="font-bold">€28,50</p></div>
+              <div class="col-span-2 pt-2 border-t border-gray-100"><p class="text-gray-500">Totaal</p><p class="text-xl font-extrabold text-brand-dark">€1.425,00</p></div>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <p class="font-bold text-brand-dark break-safe">Wedstrijdbal maat 5 – 440 gram</p>
+            <div class="grid grid-cols-2 gap-3 mt-3 text-sm">
+              <div><p class="text-gray-500">Aantal p/j</p><p class="font-bold">12</p></div>
+              <div><p class="text-gray-500">Prijs p/st</p><p class="font-bold">€46,75</p></div>
+              <div class="col-span-2 pt-2 border-t border-gray-100"><p class="text-gray-500">Totaal</p><p class="text-xl font-extrabold text-brand-dark">€561,00</p></div>
+            </div>
+          </div>
+          <div class="bg-brand-dark text-white rounded-xl p-4">
+            <p class="text-sm text-gray-300">Totaal per seizoen</p>
+            <div class="flex items-end justify-between gap-4 mt-1">
+              <p class="font-bold">102 ballen</p>
+              <p class="text-2xl font-extrabold">€3.126,00</p>
+            </div>
+          </div>
         </div>
 
         <div class="p-6 sm:p-8 bg-gray-50 border-t border-gray-200">
@@ -359,7 +406,7 @@
           <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 text-brand-cyan flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-euro-sign"></i></div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mb-4">Balsponsoren thuiswedstrijden</h2>
           <p class="text-gray-600 leading-relaxed">Bij circa 12 thuiswedstrijden per seizoen zijn er over drie jaar ongeveer 36 sponsorbare wedstrijden. Bij gemiddeld €100 per wedstrijd ontstaat een potentiële opbrengst van €3.600.</p>
-          <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
             <div class="bg-white border border-gray-200 rounded-xl p-4"><p class="font-extrabold text-brand-dark">€75</p><p class="text-xs text-gray-500 mt-1">€2.700</p></div>
             <div class="bg-white border-2 border-brand-cyan rounded-xl p-4"><p class="font-extrabold text-brand-dark">€100</p><p class="text-xs text-gray-500 mt-1">€3.600</p></div>
             <div class="bg-white border border-gray-200 rounded-xl p-4"><p class="font-extrabold text-brand-dark">€150</p><p class="text-xs text-gray-500 mt-1">€5.400</p></div>
@@ -386,7 +433,7 @@
           <p class="text-gray-300 leading-relaxed">Wel kan het tijdens de samenwerking interessant zijn om vrijblijvend te bekijken wat STRIKER7 op termijn kan betekenen op het gebied van club- en teamwear. Zonder verplichting, puur om kwaliteit, mogelijkheden en prijs naast de huidige situatie te kunnen leggen.</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-shirt text-brand-cyan text-xl"></i><p class="font-bold mt-3">Wedstrijdtenues</p></div>
           <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-person-running text-brand-cyan text-xl"></i><p class="font-bold mt-3">Trainingskleding</p></div>
           <div class="bg-brand-dark border border-gray-700 rounded-xl p-5"><i class="fa-solid fa-vest text-brand-cyan text-xl"></i><p class="font-bold mt-3">Jassen & stafkleding</p></div>
@@ -404,7 +451,8 @@
         <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-2">De drie voorstellen naast elkaar</h2>
       </div>
 
-      <div class="mobile-scroll bg-white border border-gray-200 rounded-2xl shadow-soft overflow-hidden">
+      <!-- Vergelijking desktop -->
+      <div class="hidden md:block bg-white border border-gray-200 rounded-2xl shadow-soft overflow-hidden">
         <table class="w-full text-sm">
           <thead class="bg-brand-dark text-white">
             <tr>
@@ -425,6 +473,55 @@
             <tr class="bg-gray-50"><td class="px-5 py-4 font-semibold">Kleding op termijn verkennen</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">—</td><td class="text-center px-5 py-4">✓</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- Vergelijking mobiel: drie losse kaarten onder elkaar -->
+      <div class="md:hidden space-y-4">
+        <article class="bg-white border border-gray-200 rounded-2xl shadow-soft overflow-hidden">
+          <div class="bg-brand-dark text-white p-5">
+            <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 1</p>
+            <h3 class="text-xl font-extrabold mt-1">Website</h3>
+          </div>
+          <div class="p-5 space-y-3 text-sm">
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Nieuwe website</span><strong>✓</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Websiteprijs</span><strong>€1.000</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Hosting / domein / e-mail</span><strong>€150 p/j</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Portretshoot</span><strong>—</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Matchday-posts</span><strong>—</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Ballenpartner</span><strong>—</strong></div>
+          </div>
+        </article>
+
+        <article class="bg-white border-2 border-brand-cyan rounded-2xl shadow-soft overflow-hidden">
+          <div class="bg-brand-dark text-white p-5">
+            <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 2</p>
+            <h3 class="text-xl font-extrabold mt-1">Website + media</h3>
+          </div>
+          <div class="p-5 space-y-3 text-sm">
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Nieuwe website</span><strong>✓</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Websiteprijs</span><strong>€1.000</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Hosting / domein / e-mail</span><strong>€150 p/j</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Jaarlijkse portretshoot</span><strong>✓</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">±24 matchday-posts p/j</span><strong>✓</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-600">Media-abonnement</span><strong>€750 p/j</strong></div>
+          </div>
+        </article>
+
+        <article class="bg-brand-darker text-white border border-gray-700 rounded-2xl shadow-soft overflow-hidden">
+          <div class="p-5 border-b border-gray-700">
+            <p class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Voorstel 3</p>
+            <h3 class="text-xl font-extrabold mt-1">Partnership</h3>
+          </div>
+          <div class="p-5 space-y-3 text-sm">
+            <div class="flex justify-between gap-4"><span class="text-gray-400">Nieuwe website</span><strong>✓</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-400">Websiteprijs</span><strong>€0</strong></div>
+            <p class="text-xs text-gray-500 -mt-1">Website als sponsorbijdrage t.w.v. €1.500</p>
+            <div class="flex justify-between gap-4"><span class="text-gray-400">Hosting / domein / e-mail</span><strong>€150 p/j</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-400">STRIKER7 ballenpartner</span><strong>✓</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-400">Exclusieve ballenafname</span><strong>3 seizoenen</strong></div>
+            <div class="flex justify-between gap-4"><span class="text-gray-400">Kleding op termijn verkennen</span><strong>✓</strong></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
